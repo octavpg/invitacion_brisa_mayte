@@ -54,15 +54,18 @@
 
     body {
 
-      background-color: var(--emerald-deep);
+    background-color: var(--emerald-deep);
+  
+  /* Imagen VERTICAL para celulares */
   background-image: 
-    linear-gradient(160deg, rgba(10, 36, 18, 0.8) 0%, rgba(13, 59, 30, 0.7) 45%, rgba(45, 11, 85, 0.6) 100%),
-    url("fotos/fondo.jpg");
+    linear-gradient(rgba(10, 36, 18, 0.7), rgba(45, 11, 85, 0.6)), 
+    url("fotos/fondo_moviles.jpg");
+    
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
   
-  /* Quitamos el fixed por defecto para evitar el zoom en móviles */
+  /* IMPORTANTE: En móviles usamos 'scroll' para evitar el bug del zoom */
   background-attachment: scroll; 
   
   color: var(--text-body);
@@ -71,6 +74,21 @@
   line-height: 1.7;
   min-height: 100vh;
   overflow-x: hidden;
+}
+
+/* ══════════════════════════════════════════════
+   CAMBIO A IMAGEN HORIZONTAL PARA COMPUTADORAS
+   ══════════════════════════════════════════════ */
+@media (min-width: 1024px) {
+  body {
+    /* Imagen HORIZONTAL para pantallas anchas */
+    background-image: 
+      linear-gradient(rgba(10, 36, 18, 0.7), rgba(45, 11, 85, 0.6)), 
+      url("fotos/fondo.jpg");
+      
+    /* Aquí sí podemos usar el efecto fijo porque no hay bug en PC */
+    background-attachment: fixed;
+  }
 }
 
 /* Solo aplicamos el efecto fijo en computadoras (pantallas mayores a 1024px) */
