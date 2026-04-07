@@ -54,40 +54,47 @@
 
     body {
 
-    background-color: var(--emerald-deep);
-  
-  /* Imagen VERTICAL para celulares */
-  background-image: 
-    linear-gradient(rgba(10, 36, 18, 0.7), rgba(45, 11, 85, 0.6)), 
-    url("fotos/fondo_moviles.jpg");
-    
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  
-  /* IMPORTANTE: En móviles usamos 'scroll' para evitar el bug del zoom */
-  background-attachment: scroll; 
-  
+      background-color: var(--emerald-deep);
   color: var(--text-body);
   font-family: var(--font-body);
   font-size: 18px;
   line-height: 1.7;
   min-height: 100vh;
   overflow-x: hidden;
+  /* El body ya no lleva la imagen de fondo directamente */
+}
+
+/* ══════════════════════════════════════════════
+   CAPA DE FONDO PARA MÓVILES (Fija y sin bugs)
+   ══════════════════════════════════════════════ */
+body::before {
+  content: "";
+  position: fixed; /* Esto fija el fondo a la pantalla, no al contenido */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh; /* Solo mide el alto de la pantalla del celular */
+  z-index: -1; /* Lo enviamos detrás de todo tu contenido */
+  
+  /* Imagen VERTICAL para celulares */
+  background-image: 
+    linear-gradient(rgba(10, 36, 18, 0.7), rgba(45, 11, 85, 0.6)), 
+    url("fotos/fondo_movilesfin.jpg");
+    
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 /* ══════════════════════════════════════════════
    CAMBIO A IMAGEN HORIZONTAL PARA COMPUTADORAS
    ══════════════════════════════════════════════ */
 @media (min-width: 1024px) {
-  body {
-    /* Imagen HORIZONTAL para pantallas anchas */
+  body::before {
+    /* Cambiamos la imagen a la versión de escritorio */
     background-image: 
       linear-gradient(rgba(10, 36, 18, 0.7), rgba(45, 11, 85, 0.6)), 
       url("fotos/fondo.jpg");
-      
-    /* Aquí sí podemos usar el efecto fijo porque no hay bug en PC */
-    background-attachment: fixed;
   }
 }
 
@@ -1112,13 +1119,13 @@
 
     <!-- Dress Code -->
     <div class="dresscode-card" data-aos="zoom-in" data-aos-delay="100">
-      <span class="dresscode-icon">👗</span>
+      <span class="dresscode-icon">👗🧥</span>
       <p class="dresscode-title">Código de Vestimenta</p>
       <p class="dresscode-desc">Formal Elegante</p>
       <p class="dresscode-note">
         Vestido largo o coctel · Traje formal<br>
-        <strong style="color:var(--gold);">Evitar el color blanco y verde esmeralda</strong><br>
-        (reservados para la festejada)
+        <strong style="color:var(--gold);">Se reservan colores verdes</strong><br>
+        (reservados para la quinceañera)
       </p>
     </div>
 
@@ -1151,12 +1158,12 @@
     </p>
 
     <!-- ↓ Reemplaza el href con el enlace real de tu Google Forms -->
-    <a href="https://forms.gle/eDerTmt6rz2P6ce78"
+    <a href=" https://wa.me/9331120479"
        target="_blank" rel="noopener" class="btn-rsvp">
       💌 &nbsp; Confirmar Asistencia
     </a>
 
-    <p class="rsvp-deadline">Fecha límite · 25 de Abril · 2026</p>
+    <p class="rsvp-deadline">Fecha límite · 20 de Abril · 2026</p>
   </section>
 
 </main>
