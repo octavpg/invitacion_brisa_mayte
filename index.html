@@ -54,28 +54,31 @@
 
     body {
 
-      /* 1. Definimos el color de respaldo */
-  background-color: var(--emerald-deep);
-
-  /* 2. Combinamos el degradado (como capa superior transparente) y la imagen */
-  /* Nota: Cambié el nombre a 'fondo.jpg' según tu captura */
+      background-color: var(--emerald-deep);
   background-image: 
     linear-gradient(160deg, rgba(10, 36, 18, 0.8) 0%, rgba(13, 59, 30, 0.7) 45%, rgba(45, 11, 85, 0.6) 100%),
     url("fotos/fondo.jpg");
-
-  /* 3. Ajustes de visualización */
-  background-attachment: fixed;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-  /* 4. Resto de tus estilos */
+  
+  /* Quitamos el fixed por defecto para evitar el zoom en móviles */
+  background-attachment: scroll; 
+  
   color: var(--text-body);
   font-family: var(--font-body);
   font-size: 18px;
   line-height: 1.7;
   min-height: 100vh;
   overflow-x: hidden;
+}
+
+/* Solo aplicamos el efecto fijo en computadoras (pantallas mayores a 1024px) */
+@media (min-width: 1024px) {
+  body {
+    background-attachment: fixed;
+  }
+  
     }
 
     /* ══════════════════════════════════════════════
