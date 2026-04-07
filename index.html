@@ -53,14 +53,29 @@
     html { scroll-behavior: smooth; }
 
     body {
-      background: linear-gradient(160deg, var(--emerald-deep) 0%, var(--emerald-mid) 45%, var(--purple-royal) 100%);
-      background-attachment: fixed;
-      color: var(--text-body);
-      font-family: var(--font-body);
-      font-size: 18px;
-      line-height: 1.7;
-      min-height: 100vh;
-      overflow-x: hidden;
+
+      /* 1. Definimos el color de respaldo */
+  background-color: var(--emerald-deep);
+
+  /* 2. Combinamos el degradado (como capa superior transparente) y la imagen */
+  /* Nota: Cambié el nombre a 'fondo.jpg' según tu captura */
+  background-image: 
+    linear-gradient(160deg, rgba(10, 36, 18, 0.8) 0%, rgba(13, 59, 30, 0.7) 45%, rgba(45, 11, 85, 0.6) 100%),
+    url("fotos/fondo.jpg");
+
+  /* 3. Ajustes de visualización */
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* 4. Resto de tus estilos */
+  color: var(--text-body);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.7;
+  min-height: 100vh;
+  overflow-x: hidden;
     }
 
     /* ══════════════════════════════════════════════
@@ -704,7 +719,7 @@
       bottom: 28px;
       right: 20px;
       z-index: 999;
-      width: 56px; height: 56px;
+      width: 80px; height: 80px;
       border-radius: 50%;
       background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
       border: none;
@@ -821,7 +836,7 @@
       </div>
 
       <p class="hero-date" data-aos="fade-up" data-aos-delay="700">
-        Jueves · 01 de Mayo · 2026
+        Viernes · 01 de Mayo · 2026
       </p>
 
       <!-- CUENTA REGRESIVA -->
@@ -864,12 +879,12 @@
     <p class="section-tag" data-aos="fade-up">· La invitación ·</p>
     <h2 class="section-title" data-aos="zoom-in">Querido invitado</h2>
     <p class="invite-text" data-aos="fade-up" data-aos-delay="150">
-      Con el corazón lleno de alegría y el alma rebosante de gratitud,<br>
-      tenemos el honor de invitarte a celebrar junto a nosotros<br>
-      los quince años de nuestra amada princesa.<br><br>
-      En una noche digna de cuento, donde el encanto del bayou<br>
-      y la magia de una corona dorada se unen para crear<br>
-      un momento que vivirá para siempre en nuestros corazones.
+      La princesa de este cuento,<br>
+      abre las puertas de su castillo.<br>
+      Y te invita a ser<br><br>
+      parte de su mágica<br>
+      historia donde celebrará<br>
+      Sus XV años
     </p>
   </section>
 
