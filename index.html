@@ -332,7 +332,7 @@ body::before {
     }
 
     .invite-text {
-      font-size: 1.05rem;
+      font-size: 1.4rem;
       text-align: center;
       color: var(--cream);
       font-style: italic;
@@ -745,7 +745,8 @@ body::before {
     #music-btn {
       position: fixed;
       bottom: 28px;
-      right: 20px;
+      left: 20px;
+      right: auto;
       z-index: 999;
       width: 80px; height: 80px;
       border-radius: 50%;
@@ -775,6 +776,56 @@ body::before {
       .gallery-grid .full-width { grid-column: 1 / -1; }
       .padrinos-grid { grid-template-columns: repeat(4, 1fr); }
     }
+
+    /* Estilos para el Lightbox */
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 2000; /* Por encima de todo, incluso del botón de música */
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9); /* Fondo negro semitransparente */
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 90%;
+  max-width: 800px;
+  border-radius: 10px;
+  border: 2px solid var(--gold);
+  animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+  from {transform: scale(0.7); opacity: 0;}
+  to {transform: scale(1); opacity: 1;}
+}
+
+.close-modal {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: var(--white);
+  font-size: 60px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  text-align: center;
+  color: var(--gold-light);
+  padding: 15px 0;
+  font-family: var(--font-title);
+  letter-spacing: 2px;
+}
 
   </style>
 </head>
@@ -904,7 +955,7 @@ body::before {
 
   <!-- ❷ MENSAJE DE INVITACIÓN ─────────────────── -->
   <section class="section page-wrapper">
-    <p class="section-tag" data-aos="fade-up">· La invitación ·</p>
+    <p class="section-tag" data-aos="fade-up"></p>
     <h2 class="section-title" data-aos="zoom-in">Querido invitado</h2>
     <p class="invite-text" data-aos="fade-up" data-aos-delay="150">
       La princesa de este cuento,<br>
@@ -925,51 +976,46 @@ body::before {
 
   <!-- ❸ FAMILIA ────────────────────────────────── -->
   <section class="section page-wrapper">
-    <p class="section-tag" data-aos="fade-up">· Con todo el amor de ·</p>
+    <p class="section-tag" data-aos="fade-up"></p>
     <h2 class="section-title" data-aos="zoom-in">Nuestra Familia</h2>
 
     <!-- Padres -->
     <div class="family-grid">
       <div class="family-card" data-aos="fade-right" data-aos-delay="100">
-        <span class="card-icon">👨‍👩‍👧</span>
-        <p class="card-role">Padres</p>
-        <p class="card-name">Evaristo Pérez Márquez</p>
+        <span class="card-icon"></span>
+        <p class="card-role"></p>
+        <p class="card-name">Sr. Evaristo Pérez Márquez</p>
         <p class="card-name">&amp;</p>
-        <p class="card-name">Teresita de Jesús Sánchez Pérez</p>
+        <p class="card-name">Lic. Teresita de Jesús Sánchez Pérez</p>
       </div>
 
-      <div class="family-card" data-aos="fade-left" data-aos-delay="200">
-        <span class="card-icon">💐</span>
-        <p class="card-role">La quinceañera</p>
-        <p class="card-name" style="font-size:clamp(1.8rem,7vw,2.8rem);color:var(--gold-light);">Brisa Mayte</p>
-      </div>
-    </div>
+      
 
     <!-- Padrinos -->
     <div style="margin-top:28px;">
-      <p class="section-tag" data-aos="fade-up" style="margin-bottom:16px;">· Padrinos ·</p>
+      <p class="section-tag" data-aos="fade-up" style="margin-bottom:16px;">· Mis Padrinos ·</p>
       <div class="padrinos-grid">
         <!-- ── VELACIÓN ── -->
         <div class="padrino-card" data-aos="zoom-in" data-aos-delay="100">
-          <p class="padrino-type">🕯 Velación</p>
+          <p class="padrino-type"> Velación</p>
           <!-- Reemplaza con los nombres de los padrinos de velación -->
           <p class="padrino-name">Guadalupe<br>Márquez Javier</p>
         </div>
         <div class="padrino-card" data-aos="zoom-in" data-aos-delay="150">
-          <p class="padrino-type">🕯 Velación</p>
+          <p class="padrino-type"> Velación</p>
           <!-- Reemplaza con los nombres de los padrinos de velación -->
           <p class="padrino-name">América Cristina<br>Sánchez Vargas</p>
         </div>
         <!-- ── BRINDIS ── -->
         <div class="padrino-card" data-aos="zoom-in" data-aos-delay="200">
-          <p class="padrino-type">🥂 Brindis</p>
+          <p class="padrino-type"> Brindis</p>
           <!-- Reemplaza con los nombres de los padrinos de brindis -->
-          <p class="padrino-name">José Bernabé<br>Flores Guevara</p>
+          <p class="padrino-name">Dr. José Bernabé<br>Flores Guevara</p>
         </div>
         <div class="padrino-card" data-aos="zoom-in" data-aos-delay="250">
-          <p class="padrino-type">🥂 Brindis</p>
+          <p class="padrino-type"> Brindis</p>
           <!-- Reemplaza con los nombres de los padrinos de brindis -->
-          <p class="padrino-name">Beatriz<br>Sánchez Angulo</p>
+          <p class="padrino-name">Enf. Beatriz<br>Sánchez Angulo</p>
         </div>
       </div>
     </div>
@@ -1009,7 +1055,7 @@ body::before {
 
       <!-- FOTO 2 -->
       <div class="photo-frame" data-aos="fade-up" data-aos-delay="100">
-        <img src="fotos/tere1.jpg"
+        <img src="fotos/tere6.jpg"
              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
         <div class="photo-placeholder" style="display:none;">
           <span class="ph-icon">📸</span>
@@ -1066,7 +1112,7 @@ body::before {
 
       <!-- MISA -->
       <div class="event-card" data-aos="fade-up" data-aos-delay="100">
-        <span class="event-icon-large">⛪</span>
+        <span class="event-icon-large"></span>
         <div class="event-time-badge">
           <span>🕕 6:00 PM</span>
         </div>
@@ -1085,9 +1131,9 @@ body::before {
 
       <!-- RECEPCIÓN -->
       <div class="event-card" data-aos="fade-up" data-aos-delay="200">
-        <span class="event-icon-large">🥂</span>
+        <span class="event-icon-large"></span>
         <div class="event-time-badge">
-          <span>🕢 7:30 PM</span>
+          <span>🕢 7:00 PM</span>
         </div>
         <p class="event-type">Recepción &amp; Fiesta</p>
         <h3 class="event-name">Salón Real<br>del Álamo</h3>
@@ -1114,7 +1160,7 @@ body::before {
 
   <!-- ❻ DRESS CODE & LLUVIA DE SOBRES ─────────── -->
   <section class="section page-wrapper">
-    <p class="section-tag" data-aos="fade-up">· Indicaciones ·</p>
+    <p class="section-tag" data-aos="fade-up">· Código de vestimenta ·</p>
     <h2 class="section-title" data-aos="zoom-in">Etiqueta</h2>
 
     <!-- Dress Code -->
@@ -1123,9 +1169,9 @@ body::before {
       <p class="dresscode-title">Código de Vestimenta</p>
       <p class="dresscode-desc">Formal Elegante</p>
       <p class="dresscode-note">
-        Vestido largo o coctel · Traje formal<br>
+        <br>
         <strong style="color:var(--gold);">Se reservan colores verdes</strong><br>
-        (reservados para la quinceañera)
+        para la quinceañera
       </p>
     </div>
 
@@ -1163,7 +1209,7 @@ body::before {
       💌 &nbsp; Confirmar Asistencia
     </a>
 
-    <p class="rsvp-deadline">Fecha límite · 20 de Abril · 2026</p>
+    <p class="rsvp-deadline"></p>
   </section>
 
 </main>
@@ -1175,6 +1221,12 @@ body::before {
     · Brisa Mayte · 01 · 05 · 2026 ·
   </p>
 </footer>
+
+<div id="photo-modal" class="modal">
+  <span class="close-modal">&times;</span>
+  <img class="modal-content" id="img-expanded">
+  <div id="caption"></div>
+</div>
 
 <!-- ══════════════════════════════════════════════
      AOS · Inicialización
@@ -1335,7 +1387,34 @@ AOS.init({
     }
   });
 })();
+/* Lógica para abrir y cerrar el Modal de Fotos */
+(function setupLightbox() {
+  const modal = document.getElementById("photo-modal");
+  const modalImg = document.getElementById("img-expanded");
+  const captionText = document.getElementById("caption");
+  const closeModal = document.querySelector(".close-modal");
+
+  // Seleccionamos todas las imágenes de la galería
+  const images = document.querySelectorAll(".photo-frame img");
+
+  images.forEach(img => {
+    img.style.cursor = "zoom-in"; // Cambia el cursor para indicar que es clicable
+    img.onclick = function() {
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      // Usamos el 'alt' o el placeholder como texto opcional
+      captionText.innerHTML = "Brisa Mayte - XV Años"; 
+    }
+  });
+
+  // Cerrar al dar clic en la (X) o fuera de la imagen
+  closeModal.onclick = () => modal.style.display = "none";
+  modal.onclick = (e) => {
+    if(e.target === modal) modal.style.display = "none";
+  }
+})();
 </script>
 
 </body>
+
 </html>
