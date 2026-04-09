@@ -827,6 +827,18 @@ body::before {
   letter-spacing: 2px;
 }
 
+/* Estilos para las nuevas imágenes de iconos */
+.card-icon-img {
+  width: 200px; /* Ajusta este tamaño según te guste */
+  height: auto; /* Mantiene la proporción */
+  margin-bottom: 15px; /* Espacio con el título */
+  display: block; /* Asegura que se centre bien si es necesario */
+  margin-left: auto;
+  margin-right: auto;
+  /* Opcional: añade un brillo dorado sutil */
+  filter: drop-shadow(0 0 5px rgba(212, 168, 67, 0.6));
+}
+
   </style>
 </head>
 
@@ -1165,7 +1177,7 @@ body::before {
 
     <!-- Dress Code -->
     <div class="dresscode-card" data-aos="zoom-in" data-aos-delay="100">
-      <span class="dresscode-icon">👗🧥</span>
+      <img src="fotos/icono_vestimenta.png" class="card-icon-img" alt="Icono Vestimenta" />
       <p class="dresscode-title">Código de Vestimenta</p>
       <p class="dresscode-desc">Formal Elegante</p>
       <p class="dresscode-note">
